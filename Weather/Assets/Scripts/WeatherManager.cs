@@ -71,7 +71,7 @@ public class WeatherManager : MonoBehaviour
         }
     }
 
-    private IEnumerator GetWeatherXML(Action<string> callback)
+    public IEnumerator GetWeatherXML(Action<string> callback)
     {
         return CallAPI(xmlApiFirstHalf + city + xmlApiSecondHalf, callback);
     }
@@ -163,7 +163,7 @@ public class WeatherManager : MonoBehaviour
 
         else if (weatherCode == 800)
         {
-            if (selectedCityTime.Hour >= 6 && selectedCityTime.Hour <= 18)
+            if (selectedCityTime.Hour >= 7 && selectedCityTime.Hour <= 18)
             {
                 RenderSettings.skybox = clearSkyboxDay;
             }
@@ -176,7 +176,7 @@ public class WeatherManager : MonoBehaviour
 
         else if (weatherCode == 801 || weatherCode == 802 || weatherCode == 803 || weatherCode == 804)
         {
-            if (selectedCityTime.Hour >= 6 && selectedCityTime.Hour <= 18)
+            if (selectedCityTime.Hour >= 7 && selectedCityTime.Hour <= 18)
             {
                 RenderSettings.skybox = cloudySkyboxDay;
             }

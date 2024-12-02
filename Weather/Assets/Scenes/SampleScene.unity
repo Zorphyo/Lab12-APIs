@@ -391,6 +391,7 @@ GameObject:
   - component: {fileID: 277804557}
   - component: {fileID: 277804556}
   - component: {fileID: 277804555}
+  - component: {fileID: 277804559}
   m_Layer: 0
   m_Name: Billboard
   m_TagString: Untagged
@@ -477,14 +478,27 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 277804554}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
   m_LocalPosition: {x: -300, y: 0, z: 561}
   m_LocalScale: {x: 200, y: 100, z: 100}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1290049150}
   m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
+--- !u!114 &277804559
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 277804554}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d067d647d95593e46ae54269f2f5da16, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  webImage: https://upload.wikimedia.org/wikipedia/commons/thumb/1/15/Cat_August_2010-4.jpg/2560px-Cat_August_2010-4.jpg
 --- !u!1 &550497692
 GameObject:
   m_ObjectHideFlags: 0
@@ -497,6 +511,7 @@ GameObject:
   - component: {fileID: 550497695}
   - component: {fileID: 550497694}
   - component: {fileID: 550497693}
+  - component: {fileID: 550497697}
   m_Layer: 0
   m_Name: Billboard (2)
   m_TagString: Untagged
@@ -583,14 +598,27 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 550497692}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
   m_LocalPosition: {x: 300, y: 0, z: 561}
   m_LocalScale: {x: 200, y: 100, z: 100}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1645724723}
   m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
+--- !u!114 &550497697
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 550497692}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d067d647d95593e46ae54269f2f5da16, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  webImage: https://certificates.creativecommons.org/educatorsandlibrarians/wp-content/uploads/sites/5/2018/05/null1.jpeg
 --- !u!1 &705507993
 GameObject:
   m_ObjectHideFlags: 0
@@ -1298,6 +1326,7 @@ GameObject:
   - component: {fileID: 1096769183}
   - component: {fileID: 1096769182}
   - component: {fileID: 1096769181}
+  - component: {fileID: 1096769185}
   m_Layer: 0
   m_Name: Billboard (1)
   m_TagString: Untagged
@@ -1384,14 +1413,27 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1096769180}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
   m_LocalPosition: {x: 0, y: 0, z: 561}
   m_LocalScale: {x: 200, y: 100, z: 100}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1332892022}
   m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
+--- !u!114 &1096769185
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1096769180}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d067d647d95593e46ae54269f2f5da16, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  webImage: https://artisanhd.com/wp-content/uploads/2022/07/main_image_star-forming_region_carina_nircam_final-1280.jpg
 --- !u!1 &1115324698
 GameObject:
   m_ObjectHideFlags: 0
