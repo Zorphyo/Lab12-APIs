@@ -15,7 +15,9 @@ public class Billboard : MonoBehaviour
     {
         renderer = gameObject.GetComponent<Renderer>();
 
-        StartCoroutine(GetDownloadedImage(OnImageLoaded));
+        StartCoroutine(GetWebImage(OnImageLoaded));
+
+        LoadedImages.instance.imageURLs.Add(webImage);
     }
 
     // Update is called once per frame
@@ -32,13 +34,24 @@ public class Billboard : MonoBehaviour
 
     }
 
-    public IEnumerator GetDownloadedImage(Action<Texture2D> callback)
+    public IEnumerator GetWebImage(Action<Texture2D> callback)
     {
-        return DownloadImage(callback);
+        if (LoadedImages.instance.imageURLs.Contains(webImage))
+        {
+            int index = LoadedImages.instance.imageURLs.IndexOf(webImage);
+            renderer.material.SetTexture("_MainTex", LoadedImages.instance.images[index]);
+            return null;
+        }
+        
+        else
+        {
+            return DownloadImage(callback);
+        }
     }
 
     public void OnImageLoaded(Texture2D image)
     {
         renderer.material.SetTexture("_MainTex", image);
+        LoadedImages.instance.images.Add(image);
     }
 }

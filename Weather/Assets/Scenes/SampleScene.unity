@@ -619,6 +619,52 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   webImage: https://certificates.creativecommons.org/educatorsandlibrarians/wp-content/uploads/sites/5/2018/05/null1.jpeg
+--- !u!1 &558833452
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 558833454}
+  - component: {fileID: 558833453}
+  m_Layer: 0
+  m_Name: LoadedImages
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &558833453
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 558833452}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c3ca29a3592712e43ae7b9705fd092f4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  imageURLs: []
+  images: []
+--- !u!4 &558833454
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 558833452}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -359.3864, y: 242.62846, z: 547.45624}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &705507993
 GameObject:
   m_ObjectHideFlags: 0
@@ -2565,3 +2611,4 @@ SceneRoots:
   - {fileID: 277804558}
   - {fileID: 1096769184}
   - {fileID: 550497696}
+  - {fileID: 558833454}
