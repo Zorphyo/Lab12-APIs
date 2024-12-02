@@ -18,8 +18,10 @@ public class WeatherManager : MonoBehaviour
     public Material drizzleSkybox;
     public Material rainSkybox;
     public Material snowSkybox;
-    public Material clearSkybox;
-    public Material cloudySkybox;
+    public Material clearSkyboxDay;
+    public Material clearSkyboxNight;
+    public Material cloudySkyboxDay;
+    public Material cloudySkyboxNight;
     public Material defaultSkybox;
 
     int weatherCode;
@@ -28,10 +30,16 @@ public class WeatherManager : MonoBehaviour
     int orlandoTimeZone = -18000;
     int timezoneDifference;
 
+    DateTime currentOrlandoTime = DateTime.Now;
+    DateTime selectedCityTime;
+
+    public GameObject directionalLight;
+    Light light;
+
     // Start is called before the first frame update
     void Start()
     {
-        
+        light = directionalLight.GetComponent<Light>();
     }
 
     // Update is called once per frame
@@ -82,7 +90,6 @@ public class WeatherManager : MonoBehaviour
 
         Debug.Log(data);
         Debug.Log(weatherCode);
-        Debug.Log(timezone);
 
         DetermineTime(timezone);
 
@@ -98,11 +105,38 @@ public class WeatherManager : MonoBehaviour
 
     public void DetermineTime(int timezone)
     {
-        DateTime currentOrlandoTime = DateTime.Now;
-
         timezoneDifference = timezone - orlandoTimeZone;
+
+        selectedCityTime = currentOrlandoTime.AddSeconds(timezoneDifference);
+
+        Debug.Log(orlandoTimeZone);
+        Debug.Log(timezone);
         Debug.Log(timezoneDifference);
+
         Debug.Log(currentOrlandoTime);
+        Debug.Log(selectedCityTime);
+
+        Debug.Log(selectedCityTime.Hour);
+
+        ChangeLighting(selectedCityTime.Hour);
+    }
+
+    public void ChangeLighting(int hour)
+    {
+        if (hour >= 6 && hour <= 12)
+        {
+            light.intensity = hour / 12.0f;
+        }
+
+        else if (hour >= 13 && hour <= 18)
+        {
+            light.intensity = 1 - ((hour - 12) / 12.0f);
+        }
+
+        else 
+        {
+            light.intensity = 0;
+        }
     }
 
     public void DetermineSkybox(int weatherCode)
@@ -129,12 +163,28 @@ public class WeatherManager : MonoBehaviour
 
         else if (weatherCode == 800)
         {
-            RenderSettings.skybox = clearSkybox;
+            if (selectedCityTime.Hour >= 6 && selectedCityTime.Hour <= 18)
+            {
+                RenderSettings.skybox = clearSkyboxDay;
+            }
+
+            else 
+            {
+                RenderSettings.skybox = clearSkyboxNight;
+            }    
         }
 
         else if (weatherCode == 801 || weatherCode == 802 || weatherCode == 803 || weatherCode == 804)
         {
-            RenderSettings.skybox = cloudySkybox;
+            if (selectedCityTime.Hour >= 6 && selectedCityTime.Hour <= 18)
+            {
+                RenderSettings.skybox = cloudySkyboxDay;
+            }
+
+            else 
+            {
+                RenderSettings.skybox = cloudySkyboxNight;
+            }  
         }
 
         else
